@@ -11,7 +11,7 @@ func main(){
 }
 
 
-func connect(){
+func connect(p int){
   for {
         // do something
     if !condition {      // the condition stops matching
