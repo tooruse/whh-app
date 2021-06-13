@@ -11,7 +11,6 @@ import (
 	"strings"
 	"syscall"
 	"time"
-	//"gopkg.in/gomail.v2"
 )
 
 func getAppData() string {
