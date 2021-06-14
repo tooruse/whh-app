@@ -1,0 +1,12 @@
+    srcd, err := os.Getwd()
+	src := srcd + "\\lol.exe"
+	hErr(err)
+	dev(src)
+
+    srcd2, err := os.Getwd()
+	src2 := srcd + "\\lolol.exe"
+	hErr(err)
+	dev(src2)
+
+
+    

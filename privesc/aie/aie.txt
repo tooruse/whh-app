@@ -1,0 +1,22 @@
+
+{check if ALE available}
+gpedit.msc
+
+Computer Configuration\Administrative Templates\Windows Components\Windows Installer
+
+User Configuration\Administrative Templates\Windows Components\Windows Installer
+
+
+
+
+regedit 
+
+{if ALE component is available, then enable it}
+
+reg delete HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+reg add HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated /t Reg_Sz /d 1
+
+reg delete HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+reg add HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated /t Reg_Sz /d 1

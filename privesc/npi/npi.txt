@@ -1,0 +1,12 @@
+This feature can be exploited by creating a pipe server with 
+limited or low privileges and then attempting to connect a much 
+more privileged client to that pipe server. When that happens, 
+the pipe server can abuse the client’s elevated privileges to 
+perform activities based on those access rights.
+
+
+*service to spawn pipe
+*xp elevated-access service to connect to pipe
+
+legit win10 processes that have elevated privilages: 
+https://exchange.xforce.ibmcloud.com/collection/067c518a6e3b56b7787fb3a5bc62ebf8?_ga=2.266699470.1188418404.1623653255-466796821.1623653255
