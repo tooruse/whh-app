@@ -20,3 +20,8 @@ reg add HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer /v Alway
 reg delete HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 
 reg add HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated /t Reg_Sz /d 1
+
+
+
+{post - exclusions (need elevated)}
+powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\temp"

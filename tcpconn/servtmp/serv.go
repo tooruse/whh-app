@@ -20,7 +20,6 @@ const (
 func hErr(err error) {
 	if err != nil {
 		fmt.Println("Error:", err.Error())
-		os.Exit(1)
 	}
 }
 
@@ -43,7 +42,7 @@ func main() {
 func handleConnection(conn net.Conn) {
 
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("CMD> ")
+	fmt.Print("PS> ")
 	input, _ := reader.ReadString('\n')
 	if input == exi {
 		conn.Write([]byte(exi))
@@ -56,7 +55,7 @@ func handleConnection(conn net.Conn) {
 
 	buffer, err := bufio.NewReader(conn).ReadBytes('\n')
 	hErr(err)
-	fmt.Println(string(buffer[:len(buffer)-1]))
+	fmt.Print(string(buffer[:len(buffer)-1]) + "\n")
 
 	handleConnection(conn)
 }

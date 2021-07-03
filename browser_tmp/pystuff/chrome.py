@@ -37,6 +37,7 @@ def fetching_encryption_key():
     encryption_key = encryption_key[5:]
       
     # return decrypted key
+    print(win32crypt.CryptUnprotectData(encryption_key, None, None, None, 0)[1])
     return win32crypt.CryptUnprotectData(encryption_key, None, None, None, 0)[1]
   
   

