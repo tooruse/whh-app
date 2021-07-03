@@ -1,3 +1,5 @@
 # whh-app
 
-Not much to see here yet...
+### A ghetto RAT that is still in development...
+
+<a href="https://github.com/tooruse/whh-app/wiki/Usage-Overview">Usage Overview</a>
